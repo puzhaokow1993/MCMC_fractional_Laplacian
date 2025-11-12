@@ -17,7 +17,7 @@ We fix any ![phi](https://latex.codecogs.com/png.image?\dpi{110}0\not\equiv0\in%
 It is well-known that the potential ![f](https://latex.codecogs.com/png.image?\dpi{110}f) from the Dirichlet-to-Neumann map (DN map) 
 <div align="center">
   
-![\Lambda_{f}\phi \equiv (-\Delta)^{s}u_{f}|_{\mathcal{D}}](https://latex.codecogs.com/png.image?\dpi{110}\Lambda_{f}\phi\equiv(-\Delta)^{s}u_{f}|_{\mathcal{D}}), 
+![G(f):=\Lambda_{f}\phi \equiv (-\Delta)^{s}u_{f}|_{\mathcal{D}}](https://latex.codecogs.com/png.image?\dpi{110}G(f):=\Lambda_{f}\phi\equiv(-\Delta)^{s}u_{f}|_{\mathcal{D}}), 
 </div>
 
 where ![\mathcal{D}\subset\Omega_e](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{D}\subset\Omega_e) is a fixed open set. Owing to computational complexity, we consider only the case when ![n=1](https://latex.codecogs.com/png.image?\dpi{110}n=1). Some numerical examples are provided in figure below. 
@@ -27,6 +27,11 @@ where ![\mathcal{D}\subset\Omega_e](https://latex.codecogs.com/png.image?\dpi{11
 </div>
 
 We adopt a Bayesian approach to this problem, providing not only rigorous theoretical justifications but also supporting numerical simulations. 
+We randomly choose ![N\in\mathbb{N}](https://latex.codecogs.com/png.image?\dpi{110}N\in\mathbb{N}) points ![x_i](https://latex.codecogs.com/png.image?\dpi{110}x_i) from a uniform distribution on ![\mathcal{D}](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{D}) and measure 
+<div align="center">
+
+![y_{i}=G(f)(x_{i})+{\rm%20noise}](https://latex.codecogs.com/png.image?\dpi{110}y_{i}=G(f)(x_{i})+{\rm%20noise}). 
+</div>
 
 # Algorithm # 
 
@@ -38,7 +43,7 @@ We adopt a Bayesian approach to this problem, providing not only rigorous theore
 4. $~~~~$ Generate ![f(x)=\sum_{r=-2^{J_0}}^{2^{J_0-1}}f_{r}\chi_{(0,1)}(2(2^{J_0}x-r))](https://latex.codecogs.com/png.image?\dpi{110}f(x)=\sum_{r=-2^{J_0}}^{2^{J_0-1}}f_{r}\chi_{(0,1)}(2(2^{J_0}x-r))) with randomly chosen ![f_{r}\sim\mathcal{N}(0,1)](https://latex.codecogs.com/png.image?\dpi{110}f_{r}\sim\mathcal{N}(0,1))
 5. $~~~~$ Propose ![f^{(\tau+1)}=1+\sqrt{(1-\beta^2)}(f^{(\tau)}-1)+\beta%20f](https://latex.codecogs.com/png.image?\dpi{110}f^{(\tau+1)}=1+\sqrt{(1-\beta^2)}(f^{(\tau)}-1)+\beta%20f)
 6. $~~~~$ **if ![{\rm%20status}(\tau)={\rm%20accept}](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20status}(\tau)={\rm%20accept}) then**
-7. $~~~~~~~~$ ![\ell_{\rm%20current}=\tilde\ell^{(N)}(F^{(\tau)})](https://latex.codecogs.com/png.image?\dpi{110}\ell_{\rm%20current}=\tilde\ell^{(N)}(F^{(\tau)})), where ![\tilde\ell^{(N)}(f)=-\frac{1}{2\sigma^2}\sum_{i=1}^{N}(Y_{i}-G(f)(X_{i}))^{2}](https://latex.codecogs.com/png.image?\dpi{110}\tilde\ell^{(N)}(f)=-\frac{1}{2\sigma^2}\sum_{i=1}^{N}(Y_{i}-G(f)(X_{i}))^{2}) is the log-likelihood function 
+7. $~~~~~~~~$ ![\ell_{\rm%20current}=\tilde\ell^{(N)}(F^{(\tau)})](https://latex.codecogs.com/png.image?\dpi{110}\ell_{\rm%20current}=\tilde\ell^{(N)}(F^{(\tau)})), where ![\tilde\ell^{(N)}(f)=-\frac{1}{2\sigma^2}\sum_{i=1}^{N}(y_{i}-G(f)(x_{i}))^{2}](https://latex.codecogs.com/png.image?\dpi{110}\tilde\ell^{(N)}(f)=-\frac{1}{2\sigma^2}\sum_{i=1}^{N}(y_{i}-G(f)(x_{i}))^{2}) is the log-likelihood function 
 8. $~~~~$ **end if**
 9. $~~~~$ **if ![\tilde\ell^{(N)}(f^{(\tau+1)})>\ell_{\rm%20current}](https://latex.codecogs.com/png.image?\dpi{110}\tilde\ell^{(N)}(f^{(\tau+1)})>\ell_{\rm%20current}) then**
 10. $~~~~~~~~$ Set ![{\rm%20status}(\tau+1)={\rm%20accept}](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20status}(\tau+1)={\rm%20accept})
