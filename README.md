@@ -20,7 +20,13 @@ It is well-known that the potential ![f](https://latex.codecogs.com/png.image?\d
 ![\Lambda_{f}\phi \equiv (-\Delta)^{s}u_{f}|_{\mathcal{D}}](https://latex.codecogs.com/png.image?\dpi{110}\Lambda_{f}\phi\equiv(-\Delta)^{s}u_{f}|_{\mathcal{D}}), 
 </div>
 
-where ![\mathcal{D}\subset\Omega_e](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{D}\subset\Omega_e) is a fixed open set. We adopt a Bayesian approach to this problem for the case when ![n=1](https://latex.codecogs.com/png.image?\dpi{110}n=1), providing not only rigorous theoretical justifications but also supporting numerical simulations. 
+where ![\mathcal{D}\subset\Omega_e](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{D}\subset\Omega_e) is a fixed open set. Owing to computational complexity, we consider only the case when ![n=1](https://latex.codecogs.com/png.image?\dpi{110}n=1). Some numerical examples are provided in figure below. 
+
+<div align="center">
+<img src="solution_example.png" alt="example" width="45%" style="margin-right: 10px;" /> 
+</div>
+
+We adopt a Bayesian approach to this problem, providing not only rigorous theoretical justifications but also supporting numerical simulations. 
 
 # Algorithm # 
 
@@ -42,3 +48,26 @@ where ![\mathcal{D}\subset\Omega_e](https://latex.codecogs.com/png.image?\dpi{11
 14. **end for**
 
 **Return:** ![(f^{(\tau)})_{\tau=1}^{\infty}](https://latex.codecogs.com/png.image?\dpi{110}(f^{(\tau)})_{\tau=1}^{\infty}) by removing all entries ![F^{(\tau)}](https://latex.codecogs.com/png.image?\dpi{110}F^{(\tau)}) each corresponds to ![{\rm%20status}(\tau)={\rm%20reject}](https://latex.codecogs.com/png.image?\dpi{110}{\rm%20status}(\tau)={\rm%20reject})
+
+# Results # 
+
+In our numerical experiment, we draw ![N=150](https://latex.codecogs.com/png.image?\dpi{110}N=150) random samples. The noise level is set to ![\sigma=0.001](https://latex.codecogs.com/png.image?\dpi{110}\sigma=0.001), the learning rate ![\beta=0.1](https://latex.codecogs.com/png.image?\dpi{110}\beta=0.1), and the resolution parameter to ![J_0=3](https://latex.codecogs.com/png.image?\dpi{110}J_0=3). 
+A total of 5,000,000 iterations were performed, taking approximately 4,440 seconds (1 our 14 minutes) to complete. 
+The true potential ![f](https://latex.codecogs.com/png.image?\dpi{110}f) is approximated by the burn-in sample mean 
+<div align="center">
+  
+![f_{\rm%20burn}=\frac{1}{\lfloor%20T/2\rfloor}\sum_{\tau=\lfloor%20T/2\rfloor+1}^{T}f^{(\tau)}](https://latex.codecogs.com/png.image?\dpi{110}f_{\rm%20burn}=\frac{1}{\lfloor%20T/2\rfloor}\sum_{\tau=\lfloor%20T/2\rfloor+1}^{T}f^{(\tau)}). 
+</div>
+
+The plot of true potential and the burn-in sample mean is shown in figure below. 
+
+<div align="center">
+<img src="reconstruction.png" alt="Reconstruction" width="45%" style="margin-right: 10px;" /> 
+</div>
+
+The progression of the log-likelihood over iteations is shown in figure below. 
+
+
+<div align="center">
+<img src="likelihood.png" alt="likelihood" width="45%" style="margin-right: 10px;" /> 
+</div>
