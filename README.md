@@ -63,7 +63,7 @@ In our numerical experiment, we choose ![s=1/2](https://latex.codecogs.com/png.i
 </div>
 
 for all ![x\in\mathbb{R}](https://latex.codecogs.com/png.image?\dpi{110}x\in\mathbb{R}). We draw ![N=150](https://latex.codecogs.com/png.image?\dpi{110}N=150) random samples in ![\mathcal{D}=(-3,-1)\cup(1,3)](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{D}=(-3,-1)\cup(1,3)). The noise level is set to ![\sigma=0.001](https://latex.codecogs.com/png.image?\dpi{110}\sigma=0.001), the learning rate ![\beta=0.1](https://latex.codecogs.com/png.image?\dpi{110}\beta=0.1), and the resolution parameter to ![J_0=3](https://latex.codecogs.com/png.image?\dpi{110}J_0=3). 
-A total of 5,000,000 iterations were performed, taking approximately 4,440 seconds (1 our 14 minutes) to complete. 
+A total of 5,000,000 iterations were performed, taking approximately 4,440 seconds (1 hour 14 minutes) to complete. 
 The true potential ![f](https://latex.codecogs.com/png.image?\dpi{110}f) is approximated by the burn-in sample mean 
 <div align="center">
   
