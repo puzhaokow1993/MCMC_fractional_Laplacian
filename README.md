@@ -3,7 +3,7 @@
 
 This repository provides the MATLAB implementation of the MCMC algorithm presented in the following paper: 
 
-[Pu-Zhao Kow](https://puzhaokow1993.github.io/homepage/), [Janne Nurminen](https://users.jyu.fi/~jasanurm/) and [Jesse Railo](https://sites.google.com/view/jesserailo), *Bayesian inference for the fractional Calderón problem with a single measurement*, manuscript 
+[Pu-Zhao Kow](https://puzhaokow1993.github.io/homepage/), [Janne Nurminen](https://users.jyu.fi/~jasanurm/) and [Jesse Railo](https://sites.google.com/view/jesserailo), *Bayesian inference for the fractional Calderón problem with a single measurement*, 2025, [arXiv:2511.11068](https://arxiv.org/abs/2511.11068)
 
 We will not going to explain all notations here, please refer to our paper for more details. 
 
